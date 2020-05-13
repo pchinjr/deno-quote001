@@ -5,6 +5,8 @@ let quote = function() {
   return quotes[rando]
 }
 
+console.log('ran lambda get-index')
+
 let quotes = [
   "It's a family that's loaded with grudges and passion. We come from a long line of robbers and highwaymen in Italy, you know. Killers, even.",
   "To be a good actor you have to be something like a criminal, to be willing to break the rules to strive for something new.",
@@ -13,9 +15,8 @@ let quotes = [
   "I believe that being successful means having a balance of success stories across the many areas of your life. You can't truly be considered successful in your business life if your home life is in shambles."
   ]
 
-  console.log(quote())
+console.log(quote())
 
-// TODO: modify the body object!
 let body = `
 <!doctype html>
 <html lang=en>
@@ -35,10 +36,6 @@ let body = `
       ${quote()}
     </q></p>
 
-    <div class="center-text">
-    <img src="https://www.placecage.com/g/300/300">
-    </div>
-
     <p class="center-text">
       Your <a href="https://begin.com" class="link" target="_blank">Begin</a> app is ready to go!
     </p>
@@ -48,6 +45,7 @@ let body = `
 `
 
 export async function handler (req: object) {
+  console.log('ran get-index')
   return {
     headers: {
       'content-type': 'text/html; charset=utf8',
