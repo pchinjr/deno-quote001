@@ -13,8 +13,6 @@ let quotes = [
   "I believe that being successful means having a balance of success stories across the many areas of your life. You can't truly be considered successful in your business life if your home life is in shambles."
   ]
 
-console.log(quote())
-
 export async function handler (req: object) {
   return {
     headers: {
