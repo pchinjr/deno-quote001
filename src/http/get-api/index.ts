@@ -1,5 +1,5 @@
 // learn more about HTTP functions here: https://arc.codes/primitives/http
-import { quote } from "https://gist.githubusercontent.com/pchinjr/75027d05c5844d2f2364e1acbb2c8c37/raw/9cbcd9e7f28a163b520d6b4d70e1098c00e1a02a/quote-zotic.js"
+import { quote } from "https://gist.githubusercontent.com/pchinjr/75027d05c5844d2f2364e1acbb2c8c37/raw/2ff84587ba01d6d262125fe8c22c27d4b704a837/quote-zotic.js"
 
 export async function handler (req: object) {
   return {
