@@ -5,8 +5,6 @@ let quote = function() {
   return quotes[rando]
 }
 
-console.log('ran lambda get-index')
-
 let quotes = [
   "It's a family that's loaded with grudges and passion. We come from a long line of robbers and highwaymen in Italy, you know. Killers, even.",
   "To be a good actor you have to be something like a criminal, to be willing to break the rules to strive for something new.",
@@ -17,41 +15,38 @@ let quotes = [
 
 console.log(quote())
 
-let body = `
-<!doctype html>
-<html lang=en>
-  <head>
-    <meta charset=utf-8>
-    <title>Hi!</title>
-    <link rel="stylesheet" href="https://static.begin.app/starter/default.css">
-    <link href="data:image/x-icon;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII=" rel="icon" type="image/x-icon">
-  </head>
-  <body>
-
-    <h1 class="center-text">
-      Praise Cage
-    </h1>
-
-    <p class="center-text"><q> 
-      ${quote()}
-    </q></p>
-
-    <p class="center-text">
-      Your <a href="https://begin.com" class="link" target="_blank">Begin</a> app is ready to go!
-    </p>
-
-  </body>
-</html>
-`
-
 export async function handler (req: object) {
-  console.log('ran get-index')
   return {
     headers: {
       'content-type': 'text/html; charset=utf8',
       'cache-control': 'no-cache, no-store, must-revalidate, max-age=0, s-maxage=0'
     },
-    body
+    body:`
+    <!doctype html>
+    <html lang=en>
+      <head>
+        <meta charset=utf-8>
+        <title>Hi!</title>
+        <link rel="stylesheet" href="https://static.begin.app/starter/default.css">
+        <link href="data:image/x-icon;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII=" rel="icon" type="image/x-icon">
+      </head>
+      <body>
+    
+        <h1 class="center-text">
+          Praise Cage
+        </h1>
+    
+        <p class="center-text"><q> 
+          ${quote()}
+        </q></p>
+    
+        <p class="center-text">
+          Your <a href="https://begin.com" class="link" target="_blank">Begin</a> app is ready to go!
+        </p>
+    
+      </body>
+    </html>
+    `
   }
 }
 
