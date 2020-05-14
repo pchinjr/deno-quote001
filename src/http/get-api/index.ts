@@ -6,6 +6,8 @@ export async function handler (req: object) {
     headers: {
       'cache-control': 'no-cache, no-store, must-revalidate, max-age=0, s-maxage=0',
       'content-type': 'application/json; charset=utf8'
+      "Access-Control-Allow-Origin" : "*", 
+      "Access-Control-Allow-Credentials" : true 
     },
     body: JSON.stringify( {data: quote() } )
   }
